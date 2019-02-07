@@ -1,9 +1,37 @@
 #!/bin/bash
 
+# Check for FriCAS
+if fricas -nogo; then
+  echo FriCAS installed [X];
+else
+  echo FriCAS not found [required];
+  exit 5
+fi
+
+# Check for ASDF
+if apt show cl-asdf; then
+  echo cl-asdf installed [X];
+else
+  echo cl-asdf not found [required];
+  echo try: sudo apt install cl-asdf;
+  exit 6
+fi
+
+# Check for Hunchentoot
+if apt show cl-hunchentoot; then
+  echo cl-hunchentoot installed [X];
+else
+  echo cl-hunchentoot not found [required];
+  echo try: sudo apt install cl-hunchentoot;
+  exit 7
+fi
+
+# PATHS
 CLSHRD=/usr/share/common-lisp
 TARGET=$CLSHRD/source/fricas_http
 ASDLNK=$CLSHRD/systems/fricas_http.asd
 
+# Start install
 mkdir -p -v $TARGET
 mkdir -p -v $TARGET/src
 
@@ -25,7 +53,7 @@ else
 fi
 
 if ln -s $TARGET/fricas_http.asd $ASDLNK; then
-  echo fricas_httpd successfully installed;
+  echo ++++ fricas_httpd successfully installed;
 else
   exit 3
 fi

@@ -1,0 +1,3 @@
+#!/bin/sh
+fricas -eval ")lisp (progn (require :asdf)(require :fricas_http))" 
+

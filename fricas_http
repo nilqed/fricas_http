@@ -1,3 +1,21 @@
 #!/bin/sh
-fricas -eval ")lisp (progn (require :asdf)(require :fricas_http))" 
-
+#
+set_port=""
+#
+while [ "$*" != "" ] ; do
+    case $1 in
+        --port)
+            if [ "$2" = "" ] ; then
+                echo "using default port: --port=4242" ; fi
+            shift
+            set_port="(defparameter webspad::+port+ $1)"
+            ;;
+    esac
+    shift
+done
+#
+req_asdf="(require :asdf)"
+req_fricas_http="(require :fricas_http)"
+#
+fricas -eval ")lisp (progn $req_asdf $req_fricas_http $set_port)" 
+#+test:echo ")lisp (progn $req_asdf $req_fricas_http $set_port)" 

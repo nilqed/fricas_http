@@ -10,7 +10,22 @@ FriCAS web service (cl-hunchentoot)
 
 ## Installation
 
-`make install` 
+`sudo make install`
+
+## Uninstall
+
+`sudo make uninstall` 
+
+## Start
+
+`fricas_http`
+
+
+## Test
+
+ * `http://localhost:4242/eval?code=D(x^n,x,2)`
+ * `http://localhost:4242/json?code=D(x^n,x,3)`
+
 
 
  

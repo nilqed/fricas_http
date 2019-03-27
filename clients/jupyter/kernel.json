@@ -1,0 +1,6 @@
+{"argv": ["python", "-m", "fricaskernel", "-f", "{connection_file}"], 
+   "display_name": "FriCAS (HTTP)", "language": "spad"}
+
+
+
+

@@ -75,8 +75,8 @@ class SPAD(Kernel):
             if ff['tex']=='true':
                 tex = self.server.output['tex']
                 typ = self.server.output['spad-type']
-                #data['text/latex'] = spadkernel.spadtex.makeTeX(tex)
-                data['text/latex'] = spadkernel.spadtex.makeTeXType(tex,typ)
+                #data['text/latex'] = makeTeX(tex)
+                data['text/latex'] = makeTeXType(tex,typ)
             if ff['html']=='true':
                 data['text/html'] = self.server.output['html']
             if ff['mathml']=='true':

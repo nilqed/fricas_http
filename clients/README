@@ -1,0 +1,14 @@
+
+
+jupyter kernelspec list
+jupyter kernelspec remove fricaskernel
+jupyter kernelspec install ./jupyter --name fricaskernel [--user]
+
+export PYTHONPATH=$PYTHONPATH:$(jupyter --data-dir)/kernels/fricaskernel/
+
+-> jupyter notebook -> NEW FriCAS (HTTP) -> )version ...
+
+Todo: 
+-- console blocked ? 
+-- Python3 (<> syntax?)
+--     

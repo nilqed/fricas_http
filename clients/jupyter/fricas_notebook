@@ -1,0 +1,42 @@
+#!/bin/bash
+
+KERNEL_DIR=$(jupyter --data-dir)/kernels/fricaskernel
+
+# Check if kernels/fricaskernel dir exists
+if [[ ! -d $KERNEL_DIR ]]; then   
+  echo "*** FriCAS kernel directory not found!";
+  exit;
+fi
+
+
+# Check if fricaskernel.py exists
+if [[ ! -e $KERNEL_DIR/$1.py ]]; then   
+  echo "*** FriCAS kernel file not found!";
+  exit;
+fi
+
+
+# Add KERNEL_DIR to PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:$KERNEL_DIR
+
+echo "================================== "
+echo "FriCAS Jupyter Notebook "
+echo "================================== "
+echo "Kernel file (.py) .............. : $1"
+echo "Connection file ................ : $2"
+echo "Kernel directory ............... : $KERNEL_DIR"
+echo "PYTONPATH env variable ......... : $PYTHONPATH"
+echo "---------------------------------- "
+
+# Start kernel in background
+python -m $1 -f $2 &
+
+# Start fricas + cl-hunchentoot
+fricas_http
+
+# Stop notebook server (if wished, otherwise comment)
+jupyter notebook stop 8888
+exit
+
+
+

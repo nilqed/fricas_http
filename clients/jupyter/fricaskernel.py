@@ -1281,7 +1281,7 @@ spad_commands = command_list.split()
 
 if __name__ == '__main__':
     from ipykernel.kernelapp import IPKernelApp
-    pid = Popen(["fricas_http", ""]).pid
+    #pid = Popen(["fricasnb", ""]).pid
     IPKernelApp.launch_instance(kernel_class=SPAD)
 
 

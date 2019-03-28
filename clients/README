@@ -1,5 +1,12 @@
 
 
+---
+Install : sudo make install.jupyter
+Remove  : sudo make remove.jupyter
+---
+
+
+--- deprecated
 jupyter kernelspec list
 jupyter kernelspec remove fricaskernel
 jupyter kernelspec install ./jupyter --name fricaskernel [--user]

@@ -1,4 +1,4 @@
-{"argv": ["python", "-m", "fricaskernel", "-f", "{connection_file}"], 
+{"argv": ["fricas_notebook", "fricaskernel", "{connection_file}"], 
    "display_name": "FriCAS (HTTP)", "language": "spad"}
 
 

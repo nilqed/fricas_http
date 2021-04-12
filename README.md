@@ -7,9 +7,16 @@ FriCAS HTTP Server/Client (cl-hunchentoot/cl-drakma)
  * [ASDF](http://common-lisp.net/project/asdf/) (`sudo apt install cl-asdf`)
  * [Hunchentoot](http://weitz.de/hunchentoot/) (`sudo apt install cl-hunchentoot`)
  * [Drakma](https://edicl.github.io/drakma/) (`sudo apt install cl-drakma`)
+ 
+For other Linux distros you may use the adequate install tool.
 
 ## Installation
- 
+None, but you have to compile the files. 
+
+``` 
+  )compile httpcli
+  )compile httpsrv
+```
 
 ## Start
 

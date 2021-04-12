@@ -1,0 +1,17 @@
+
+ -- set to /home
+)cd  
+
+-- set dir relativ to home
+)cd devel/fricas_http/tests 
+
+-- Compile
+)co ../httpcli.spad  
+
+response := GET "https://raw.githubusercontent.com/fricas/fricas/master/README"
+
+#response -- 1228
+
+-- Convert to String
+rstr := string response
+

@@ -1,20 +1,15 @@
 # fricas_http :construction: :rocket:
-FriCAS web service (cl-hunchentoot)
+FriCAS HTTP Server/Client (cl-hunchentoot/cl-drakma)
 
 ## Prerequisites
 
- * Linux (Ubuntu/Debian for the moment)
- * [FriCAS](http://fricas.sourceforge.net/) compiled with a newer [SBCL](http://sbcl.org/)
- * [ASDF](http://common-lisp.net/project/asdf/) (`apt install cl-asdf`)
- * [Hunchentoot](http://weitz.de/hunchentoot/) (`apt install cl-hunchentoot`)
+ * [FriCAS](http://fricas.sourceforge.net/)
+ * [ASDF](http://common-lisp.net/project/asdf/) (`sudo apt install cl-asdf`)
+ * [Hunchentoot](http://weitz.de/hunchentoot/) (`sudo apt install cl-hunchentoot`)
+ * [Drakma](https://edicl.github.io/drakma/) (`sudo apt install cl-drakma`)
 
 ## Installation
-
-`sudo make install`
-
-## Uninstall
-
-`sudo make uninstall` 
+ 
 
 ## Start
 

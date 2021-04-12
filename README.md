@@ -59,13 +59,40 @@ then you should see:
 ![Hunchentoot](docs/ht.png)
 
 
+## Test Client
+
+```
+  )compile httpcli
+  
+  ; compilation finished in 0:00:00.044
+------------------------------------------------------------------------
+   HttpClient is now explicitly exposed in frame initial 
+   HttpClient will be automatically loaded when needed from 
+      /home/kfp/devel/fricas_http/HTTPCLI.NRLIB/HTTPCLI
+
+  (1) -> r:=GET "https://raw.githubusercontent.com/fricas/fricas/master/README"
+
+  Value = ("uiop" "UIOP" "asdf" "ASDF")
+  Value = ("URI" "SB-BSD-SOCKETS")
+  Value = |drakmaGET|
+  Value = |drakmaPOST|
+
+   (1)
+  "This is FriCAS computer algebra system.  FriCAS is a fork of Axiom.
+   For ins tallation instructions see INSTALL. 
+   ...
+   -- add new mathematical algorithms
+
+   Waldek Hebisch
+   "
+                                                            Type: SExpression
+  "
+  
+  -- convert to type String if you like: string r 
+  
+```
 
 
-
-## Test
-
- * `http://localhost:4242/eval?code=D(x^n,x,2)`
- * `http://localhost:4242/json?code=D(x^n,x,3)`
 
 
 

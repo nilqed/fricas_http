@@ -1,0 +1,45 @@
+)abbrev package HTTPSRV HttpServer
+++ Author: Kurt Pagani <nilqed@gmail.com>
+++ Date Created: Mon Nov 30 18:54:58 CET 2015
+++ Date Revised: Fri Apr 03 01:03:34 CET 2021
+++ License: BSD
+++ Date Last Updated:
+++ Basic Operations: 
+++ Depends On: HUNCHENTOOT/HTPP-SERVER 
+++ Examples:
+++ References:
+++   https://edicl.github.io/hunchentoot/
+++ Description:
+++   cl-hunchentoot/bionic,bionic,now 1.2.35-1 all [installed]
+++   Common Lisp web server formerly known as TBNL
+++   sudo apt install  cl-hunchentoot
+++ Test 'require':
+++ rlwrap sbcl
+++  * (require :asdf)
+++  * (require :hunchentoot)
+++
+HttpServer() : Exports == Implementation where
+  
+  STR ==> String
+  SEX ==> SExpression
+  MSC ==> MoreSystemCommands
+  
+  syscmd(s) ==> systemCommand(s)$MSC
+  lisp1(s)  ==> syscmd(string(FORMAT('NIL,"lisp ~A",s)$Lisp)) 
+  lisp2(s)  ==> syscmd(string(FORMAT('NIL,"lisp ~A ~A",s1,s2)$Lisp)) 
+  
+  Exports ==  with
+    
+    start  : PositiveInteger -> SEX
+      ++ start(p) starts the HTTP server listening on port p.
+      ++ Example: start 4242 => open http://localhost:4242/ in
+      ++ browser.
+	
+  Implementation ==  add 
+  
+    lisp1 "(require :asdf)"
+    lisp1 "(require :hunchentoot)"
+    lisp1 "(defun |htStart| (p) (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port p)))"
+   
+    start(port:PositiveInteger):SEX == htStart(port)$Lisp
+    

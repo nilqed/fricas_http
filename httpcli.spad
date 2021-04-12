@@ -17,7 +17,10 @@
 ++ rlwrap sbcl
 ++  * (require :asdf)
 ++  * (require :drakma)
-++
+++ Notes:
+++   Only 'low level' is implemented at the moment.
+++   For more sophisticated requests, consult the reference
+++   above.
 HttpClient() : Exports == Implementation where
   
   STR ==> String
@@ -30,7 +33,13 @@ HttpClient() : Exports == Implementation where
   Exports ==  with
     
     GET  : STR -> SEX
+      ++ Sends an HTTP request to a web server and returns its reply. uri is 
+      ++ where the request is sent to, and it is either a string denoting a 
+      ++ uniform resource identifier or a PURI:URI object. The scheme of uri 
+      ++ must be 'http' or 'https'. 
     POST : (STR,STR) -> SEX
+      ++ ends an HTTP request to a web server using "method:post" and returns 
+      ++ its reply. 
     
 	
 	

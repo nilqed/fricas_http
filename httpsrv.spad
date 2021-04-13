@@ -39,7 +39,22 @@ HttpServer() : Exports == Implementation where
   
     lisp1 "(require :asdf)"
     lisp1 "(require :hunchentoot)"
-    lisp1 "(defun |htStart| (p) (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port p)))"
+
+    lisp1 "(defun |htStart| (p) (hunchentoot:start "_
+          "(make-instance 'hunchentoot:easy-acceptor :port p)))"
+   
+    lisp1 "(defun hunchentoot::spad-eval (code)" _
+          "(let ((*package* (find-package :boot))" _
+          "(alg (boot::|parseAndEvalToString| code)))" _
+          "(format nil _"~{~A~%~}_" alg)))"
+          
+    lisp1 "(hunchentoot:define-easy-handler " _
+          "(fricas-eval :uri _"/eval_") (code)" _
+          "(setf (hunchentoot:content-type*) _"text/plain_")" _
+          "(format nil _"~A~%_" (hunchentoot::spad-eval code)))"
+          
+
+
    
     start(port:PositiveInteger):SEX == htStart(port)$Lisp
     

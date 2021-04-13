@@ -40,23 +40,18 @@ None, but you have to compile the files.
 
 ```
 
-Open ``http://localhost:4242/`` in a web-browser:
-
-```
-  (3) -> 127.0.0.1 - [2021-04-12 22:24:25] "GET / HTTP/1.1" 200 393 "-" 
-  "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:87.0) Gecko/20100101 Firefox/87.0"
-   127.0.0.1 - [2021-04-12 22:24:26] "GET /img/made-with-lisp-logo.jpg 
-   HTTP/1.1" 200 12583 "http://localhost:4242/" "Mozilla/5.0 (X11; Ubuntu; 
-   Linux x86_64; rv:87.0) Gecko/20100101 Firefox/87.0"
-   127.0.0.1 - [2021-04-12 22:24:26] "GET /favicon.ico HTTP/1.1" 200 1406 
-   "http://localhost:4242/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:87.0) 
-   Gecko/20100101 Firefox/87.0"
-```
-  
-  
-then you should see:
+Open ``http://localhost:4242/`` in a web-browser, then you should see:
 
 ![Hunchentoot](docs/ht.png)
+
+
+The next URL will evaluate the sixth derivative of ``x^n``:
+
+```
+  http://localhost:4242/eval?code=D(x^n,x,6)
+```
+
+![Eval](docs/fricas_eval.png)
 
 
 ## Test Client
@@ -79,7 +74,7 @@ then you should see:
 
    (1)
   "This is FriCAS computer algebra system.  FriCAS is a fork of Axiom.
-   For ins tallation instructions see INSTALL. 
+   For installation instructions see INSTALL. 
    ...
    -- add new mathematical algorithms
 
